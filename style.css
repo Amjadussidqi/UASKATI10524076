@@ -1,0 +1,11 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #111827;
+}
+:root {
+    --color-primary: #3b82f6;
+    --color-secondary: #f59e0b;
+    --color-gold: #d4af37;
+    --color-dark: #1f2937;
+    --color-light: #f9fafb;
+}
