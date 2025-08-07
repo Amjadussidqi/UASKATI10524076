@@ -1,15 +1,61 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Mini GT Store - Premium Diecast</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css"/>
-    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini GT Diecast Store</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Include header, nav, marquee, sidebar kiri, content produk, sidebar kanan, footer -->
-    <!-- Refer to transaksi.html for transaction page -->
+    <div class="container">
+        <header class="header">
+            <h1>Mini GT Diecast Store</h1>
+            <marquee behavior="scroll" direction="left" class="marquee">Special discounts on all new arrivals this week!</marquee>
+        </header>
+        <nav class="menu">
+            <a href="index.html">Products</a>
+            <a href="kontak.html">Contact Us</a>
+        </nav>
+        <div class="main-content">
+            <aside class="left">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Sports Cars</a></li>
+                    <li><a href="#">Classic Cars</a></li>
+                    <li><a href="#">Limited Editions</a></li>
+                </ul>
+            </aside>
+            <main class="content">
+                <h2>Our Products</h2>
+                <div class="product-gallery">
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200x150.png?text=Mini+GT+1" alt="Diecast Car 1">
+                        <h3>Lamborghini Aventador</h3>
+                        <p>A stunning 1:64 scale model of the iconic Lamborghini Aventador in a vibrant blue.</p>
+                        <a href="transaksi.html" class="buy-button">Buy Now</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200x150.png?text=Mini+GT+2" alt="Diecast Car 2">
+                        <h3>Nissan GT-R Nismo</h3>
+                        <p>A detailed replica of the powerful Nissan GT-R Nismo with authentic livery.</p>
+                        <a href="transaksi.html" class="buy-button">Buy Now</a>
+                    </div>
+                    <div class="product-item">
+                        <img src="https://via.placeholder.com/200x150.png?text=Mini+GT+3" alt="Diecast Car 3">
+                        <h3>Porsche 911 GT3</h3>
+                        <p>An elegant model of the Porsche 911 GT3, perfect for any collector.</p>
+                        <a href="transaksi.html" class="buy-button">Buy Now</a>
+                    </div>
+                </div>
+            </main>
+            <aside class="right">
+                <h3>Latest News</h3>
+                <p>New arrivals coming next month! Stay tuned for more updates.</p>
+            </aside>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2025 Mini GT Diecast Store. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
