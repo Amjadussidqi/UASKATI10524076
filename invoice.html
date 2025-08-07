@@ -1,32 +1,76 @@
-<main class="content">
-        <h2>Your Invoice</h2>
-        <div id="invoice-details" class="invoice-box">
-            </div>
-    </main>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struk Pembelian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Struk Pembelian Anda</h1>
+        </header>
+
+        <nav class="menu">
+            <a href="index.html">Beranda</a>
+            <a href="transaksi.html">Pesan Sekarang</a>
+            <a href="kontak.html">Kontak Kami</a>
+        </nav>
+
+        <div class="main-content-invoice">
+            <main class="konten-utama">
+                <div id="invoice-details" class="kotak-invoice">
+                    </div>
+            </main>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Toko Diecast Mini GT. Semua Hak Cipta Dilindungi.</p>
+        </footer>
+    </div>
     <script>
         window.onload = function() {
-            // Mengambil div tempat invoice akan ditampilkan
             const invoiceDetails = document.getElementById('invoice-details');
-            
-            // Membaca parameter dari URL halaman saat ini
             const params = new URLSearchParams(window.location.search);
+            const invoiceNumber = `INV/${new Date().getFullYear()}/${Math.floor(1000 + Math.random() * 9000)}`;
+            const tglPesan = new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'long', year: 'numeric' });
 
-            // Jika ada parameter 'name' di URL, tampilkan datanya
-            if (params.has('name')) {
+            if (params.has('nama')) {
                 invoiceDetails.innerHTML = `
-                    <h3>Thank you, ${params.get('name')}!</h3>
-                    <p><strong>Email:</strong> ${params.get('email')}</p>
-                    <p><strong>Shipping Address:</strong> ${params.get('address')}</p>
-                    <hr>
-                    <h4>Order Details</h4>
-                    <p><strong>Product:</strong> ${params.get('product')}</p>
-                    <p><strong>Quantity:</strong> ${params.get('quantity')}</p>
-                    <hr>
-                    <p>Your order has been confirmed. A confirmation email will be sent to ${params.get('email')}.</p>
+                    <div class="invoice-header">
+                        <h2>INVOICE</h2>
+                        <p><strong>No. Invoice:</strong> ${invoiceNumber}</p>
+                        <p><strong>Tanggal Pesan:</strong> ${tglPesan}</p>
+                    </div>
+                    <div class="invoice-body">
+                        <h4>Ditagihkan Kepada:</h4>
+                        <p><strong>Nama:</strong> ${params.get('nama')}</p>
+                        <p><strong>Alamat Pengiriman:</strong><br>${params.get('alamat')}</p>
+                        <hr>
+                        <h4>Detail Pesanan:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Produk Dipesan</th>
+                                    <th>Jumlah</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>${params.get('produk')}</td>
+                                    <td>${params.get('jumlah')}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="invoice-footer">
+                        <p>Terima kasih telah berbelanja!</p>
+                        <p class="email-info">Konfirmasi pesanan akan dikirim ke email: <strong>${params.get('email')}</strong></p>
+                    </div>
                 `;
             } else {
-                // Jika tidak ada data, tampilkan pesan ini
-                invoiceDetails.innerHTML = '<p>No transaction data found. Please complete the form first.</p>';
+                invoiceDetails.innerHTML = '<h2>Data transaksi tidak ditemukan.</h2><p>Silakan kembali ke halaman transaksi untuk membuat pesanan.</p>';
             }
         };
     </script>
