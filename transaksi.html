@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Transaksi - 10524076 Mini GT Store</title>
+    <link rel="stylesheet" href="style-hybrid.css">
+</head>
+<body>
+
+<table class="table-wrapper">
+    <tr>
+        <td class="header-cell">
+            <h1>10524076 Mini GT Store</h1>
+            <p>Formulir untuk pembelian Mini GT</p>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="menu-cell">
+            <a href="index.html">Beranda</a>
+            <a href="transaksi.html">Beli Mini GT</a>
+            <a href="info.html">Tentang Kami</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="main-content-cell">
+             <div class="content">
+                <h2>Form Pembelian</h2>
+                <form id="transactionForm">
+                    <table class="form-table">
+                        <tr>
+                            <td>Nama Pembeli</td>
+                            <td><input type="text" id="nama" name="nama" required></td>
+                        </tr>
+                        <tr>
+                            <td>Produk</td>
+                            <td>
+                                <select id="produk" name="produk">
+                                    <option value="Mini GT Nissan R35 LBWK">Mini GT Nissan R35 LBWK</option>
+                                    <option value="Mini GT Nissan R34 LBWK">Mini GT Nissan R34 LBWK</option>
+                                    <option value="Mini Lamborghini Aventador">Mini Lamborghini Aventador</option>
+                                    <option value="Mini GT Porsche 911">Mini GT Porsche 911</option>
+                                    <option value="Mini GT Mitsubishi Lancer Evolution 10">Mini GT Mitsubishi Lancer Evolution 10</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jumlah</td>
+                            <td><input type="number" id="jumlah" name="jumlah" min="1" required></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat Pengiriman</td>
+                            <td><textarea id="alamat" name="alamat" rows="4" required></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Metode Pembayaran</td>
+                            <td>
+                                <input type="radio" name="pembayaran" value="COD" checked> COD <br>
+                                <input type="radio" name="pembayaran" value="Transfer Bank"> Transfer Bank <br>
+                                <input type="radio" name="pembayaran" value="Shopee Pay"> Shopee Pay <br>
+                                <input type="radio" name="pembayaran" value="Dana"> Dana <br>
+                                <input type="radio" name="pembayaran" value="GoPay"> GoPay <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center;">
+                                <input type="submit" value="Kirim Transaksi">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="footer-cell">
+             &copy; 2025 MUHAMMAD NADHIF AMJADUSSIDQI | 10524076 Mini GT Store
+        </td>
+    </tr>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
