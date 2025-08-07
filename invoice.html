@@ -1,45 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice - Mini GT Diecast Store</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <h1>Mini GT Diecast Store</h1>
-             <marquee behavior="scroll" direction="left" class="marquee">Thank you for your purchase!</marquee>
-        </header>
-        <nav class="menu">
-            <a href="index.html">Products</a>
-            <a href="kontak.html">Contact Us</a>
-        </nav>
-        <div class="main-content">
-            <aside class="left">
-                <h3>Need Help?</h3>
-                <p>Contact our support team for any inquiries regarding your order.</p>
-            </aside>
-            <main class="content">
-                <h2>Your Invoice</h2>
-                <div id="invoice-details" class="invoice-box">
-                    </div>
-            </main>
-            <aside class="right">
-                <h3>Track Your Order</h3>
-                <p>A tracking number will be sent to your email shortly.</p>
-            </aside>
-        </div>
-        <footer class="footer">
-            <p>&copy; 2025 Mini GT Diecast Store. All Rights Reserved.</p>
-        </footer>
-    </div>
+<main class="content">
+        <h2>Your Invoice</h2>
+        <div id="invoice-details" class="invoice-box">
+            </div>
+    </main>
     <script>
         window.onload = function() {
+            // Mengambil div tempat invoice akan ditampilkan
             const invoiceDetails = document.getElementById('invoice-details');
+            
+            // Membaca parameter dari URL halaman saat ini
             const params = new URLSearchParams(window.location.search);
 
+            // Jika ada parameter 'name' di URL, tampilkan datanya
             if (params.has('name')) {
                 invoiceDetails.innerHTML = `
                     <h3>Thank you, ${params.get('name')}!</h3>
@@ -49,11 +21,11 @@
                     <h4>Order Details</h4>
                     <p><strong>Product:</strong> ${params.get('product')}</p>
                     <p><strong>Quantity:</strong> ${params.get('quantity')}</p>
-                    <p><strong>Total Price:</strong> Calculating...</p>
                     <hr>
-                    <p>Your order has been confirmed. A confirmation email has been sent to ${params.get('email')}.</p>
+                    <p>Your order has been confirmed. A confirmation email will be sent to ${params.get('email')}.</p>
                 `;
             } else {
+                // Jika tidak ada data, tampilkan pesan ini
                 invoiceDetails.innerHTML = '<p>No transaction data found. Please complete the form first.</p>';
             }
         };
